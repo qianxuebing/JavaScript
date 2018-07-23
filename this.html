@@ -13,11 +13,31 @@
 
 <body>
     <div class="box">
-
+        <div>
+            <button class="btn btn-info active">栏目一</button>
+            <button class="btn btn-info">栏目二</button>
+            <button class="btn btn-info">栏目三</button>
+            <button class="btn btn-info">栏目四</button>
+        </div>
+        <div>
+            <p class="alert-info">栏目一的内容</p>
+            <p class="alert-info">栏目二的内容</p>
+            <p class="alert-info">栏目三的内容</p>
+            <p class="alert-info">栏目四的内容</p>
+        </div>
     </div>
 </body>
 <script src="js/jquery-1.10.2.min.js"></script>
 <script>
+    $(function() {
+        $(".box button").click(function() {
+            var $index = $(this).index();
+            $(this).addClass('active').siblings().removeClass('active');
+            $(".box p").eq($index).show().siblings().hide();
+        })
+    })
 </script>
+
+</html>
 
 </html>
