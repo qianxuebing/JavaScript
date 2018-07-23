@@ -4,6 +4,7 @@
 
 .box,
 .box1,
+.box2,
 .box3 {
     width: 80%;
     min-height: 50px;
@@ -23,4 +24,12 @@ button {
 input {
     height: 25px;
     padding-left: 10px;
+}
+
+.item {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid red;
 }

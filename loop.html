@@ -12,7 +12,85 @@
 </head>
 
 <body>
-
+    <div class="box">
+        <button>循环出现提示框5次</button>
+    </div>
+    <div class="box1">
+        <button>批量修改样式</button>
+        <div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    </div>
+    <div class="box2">
+        <div class="items"></div>
+        <button id="checkAll">全选</button>
+        <button id="inverse">反选</button>
+        <button id="uncheck">不选</button>
+    </div>
 </body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+    $(function() {
+        // 遍历checkbox 插入items中
+        InitCheck();
+        $(".box button").click(function() {
+            for (var i = 0; i < 5; i++) {
+                alert("第" + (i + 1) + "次弹出");
+            }
+        });
+
+        $(".box1 button").click(function() {
+            var $item = $(".item");
+            if ($item[0].style.backgroundColor == "yellow") {
+                for (let i = 0; i < $item.length; i++) {
+                    $item[i].style.backgroundColor = '#ffffff';
+
+                }
+            } else {
+                for (let i = 0; i < $item.length; i++) {
+                    $item[i].style.backgroundColor = 'yellow';
+
+                }
+            }
+        });
+
+        // 全选
+        $("#checkAll").click(function() {
+            $.each($('input:checkbox'), function() {
+                this.checked = true;
+            })
+        });
+
+        // 反选
+        $("#inverse").click(function() {
+            $.each($('input:checkbox'), function() {
+                if (this.checked) {
+                    this.checked = false;
+                } else {
+                    this.checked = true;
+                }
+            })
+        });
+
+        // 不选
+        $("#uncheck").click(function() {
+            $.each($('input:checkbox'), function() {
+                this.checked = false;
+            })
+        })
+
+
+    })
+
+    function InitCheck() {
+        var html = "";
+        for (let i = 0; i < 6; i++) {
+            html += '<input type="checkbox"/>'
+        }
+        $(".items").append(html);
+    }
+</script>
 
 </html>
