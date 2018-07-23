@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数传参</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+    <div class="box">
+        <button onclick="OneParam('yellow')">BackgroundColor change yellow</button>
+        <button onclick="OneParam('green')">BackgroundColor change green</button>
+        <button onclick="OneParam('red')">BackgroundColor change red</button>
+        <button onclick="OneParam('blue')">BackgroundColor change blue</button>
+    </div>
+
+    <div class="box1">
+        <button onclick="TwoParams('backgroundColor','yellow')">BackgroundColor change yellow</button>
+        <button onclick="TwoParams('width','50%')">Width change small</button>
+        <button onclick="TwoParams('height','300px')">Height change big</button>
+    </div>
+    <div class="box3">
+        <input type="text" value="三生三世">
+        <button onclick="ChangeText('value')">Change text</button>
+        <button onclick="ChangeText('title')">Add title</button>
+    </div>
+</body>
+
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+    // 一个参数
+    function OneParam(color) {
+        $(".box").css('backgroundColor', color);
+    }
+
+    // 两个参数
+    function TwoParams(key, value) {
+        $(".box1").css(key, value);
+    }
+
+    function ChangeText(name) {
+        $(".box3 input").attr(name, '十里桃花');
+    }
+</script>
+
+</html>
