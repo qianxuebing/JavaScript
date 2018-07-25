@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>calendar</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="item active">
+            <span>1</span>
+            <i>JAN</i>
+        </div>
+        <div class="item">
+            <span>2</span>
+            <i>FER</i>
+        </div>
+        <div class="item">
+            <span>3</span>
+            <i>MAR</i>
+        </div>
+        <div class="item">
+            <span>4</span>
+            <i>APR</i>
+        </div>
+        <div class="item">
+            <span>5</span>
+            <i>MAY</i>
+        </div>
+        <div class="item">
+            <span>6</span>
+            <i>JUN</i>
+        </div>
+        <div class="item">
+            <span>7</span>
+            <i>JUL</i>
+        </div>
+        <div class="item">
+            <span>8</span>
+            <i>AUG</i>
+        </div>
+        <div class="item">
+            <span>9</span>
+            <i>SEP</i>
+        </div>
+        <div class="item">
+            <span>10</span>
+            <i>OCT</i>
+        </div>
+        <div class="item">
+            <span>11</span>
+            <i>NOV</i>
+        </div>
+        <div class="item">
+            <span>12</span>
+            <i>DEC</i>
+        </div>
+    </div>
+    <div class="next">
+        <h3>
+            <span>1</span>月活动</h3>
+        <p>一月活动内容</p>
+    </div>
+
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+    $(function() {
+        var arr = [
+            '一月活动内容',
+            '二月活动内容',
+            '三月活动内容',
+            '四月活动内容',
+            '五月活动内容',
+            '六月活动内容',
+            '七月活动内容',
+            '八月活动内容',
+            '九月活动内容',
+            '十月活动内容',
+            '十一月活动内容',
+            '十二月活动内容'
+        ];
+        $(".wrap .item").hover(function() {
+            var $index = $(this).index();
+            var $span = $(this).children('span').text();
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".next span").text($span);
+            $(".next p").text(arr[$index]);
+        })
+
+    })
+</script>
+
+</html>
+
+</html>

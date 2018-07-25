@@ -94,3 +94,66 @@ input {
     border-radius: 4px;
     padding: 0 20px;
 }
+
+.wrap {
+    width: 300px;
+    margin: 50px auto 0;
+    background-color: #ccc;
+    font-size: 0;
+    padding: 10px 20px 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.wrap .item {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+    background-color: #333;
+    color: #fff;
+    margin: 10px;
+    border: 1px solid #fff;
+    padding: 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.item span {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.item i {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
+
+.active {
+    border: 1px solid #333 !important;
+    color: palevioletred !important;
+    background-color: #fff !important;
+}
+
+.next {
+    width: 302px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    color: #000;
+    background-color: #ccc;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.next h3 {
+    font-weight: 700 !important;
+}
+
+.next p {
+    margin-top: 10px;
+    color: #666;
+}
