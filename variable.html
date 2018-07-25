@@ -12,12 +12,91 @@
 </head>
 
 <body>
+    <div class="box">
+        <button class="btn-number">number</button>
+        <button class="btn-string">string</button>
+        <button class="btn-boolean">boolean</button>
+        <button class="btn-function">function</button>
+        <button class="btn-object">object</button>
+        <button class="btn-undefined">undefined</button>
+        <p>类型：<span class="type"></span></p>
+        <p>例如：<span class="liru"></span></p>
+    </div>
+
+    <div class="box1">
+        <p class="title">+：拼接</p>
+        <input type="text" class="one">+
+        <input type="text" class="two">
+        <button class="btn-sum">求和</button>
+    </div>
+
+    <div class="box2">
+        <p class="title">Number：计算数字</p>
+        <input type="text" class="one">+
+        <input type="text" class="two">
+        <button class="btn-sum">求和</button>
+    </div>
+    <div class="box3">
+        <p class="title">isNAN：判断不是一个数字，返回true</p>
+        <input type="text" class="one">
+        <button class="btn-sum">isNAN</button>
+    </div>
+
 
 </body>
 <script src="js/jquery-1.10.2.min.js"></script>
 <script>
     $(function() {
+        var a = 123;
+        b = "123";
+        c = true;
+        d = function() {
+            alert('d');
+        };
+        e = document;
+        var f;
 
+        $(".btn-number").click(function() {
+            $(".type").html('数字' + typeof a);
+            $(".liru").text('var a = 123;');
+        });
+        $(".btn-string").click(function() {
+            $(".type").html('字符串' + typeof b);
+            $(".liru").text("var b = '123'");
+        });
+
+        $(".btn-boolean").click(function() {
+            $(".type").html('布尔' + typeof c);
+            $(".liru").text("var c = true");
+        });
+
+        $(".btn-function").click(function() {
+            $(".type").html('函数' + typeof d);
+            $(".liru").text("var d = function() {alert('d')};");
+        });
+        $(".btn-object").click(function() {
+            $(".type").html('对象' + typeof e);
+            $(".liru").text("var e = document");
+        });
+        $(".btn-undefined").click(function() {
+            $(".type").html('未定义' + typeof f);
+            $(".liru").text("var f");
+        });
+
+        $(".box1 .btn-sum").click(function() {
+            var $one = $(".box1").find(".one").val();
+            var $two = $(".box1").find(".two").val();
+            alert($one + $two);
+        });
+
+        $(".box2 .btn-sum").click(function() {
+            var $one = $(".box2").find(".one").val();
+            var $two = $(".box2").find(".two").val();
+            alert(Number($one) + Number($two));
+        });
+        $(".box3 .btn-sum").click(function() {
+            alert(isNaN($(".box3 input").val()));
+        })
     })
 </script>
 
