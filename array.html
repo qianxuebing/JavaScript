@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>array</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" name="word" id="word">
+        <button class="btn-submit">提交</button>
+        <p>文本框的内容为：
+            <span class="text"></span>
+        </p>
+    </div>
+    <div class="box1">
+        <input type="text" name="word" class="one">+
+        <input type="text" name="word" class="two">
+        <button class="btn-submit">提交</button>
+        <p>字符串拼接：
+            <span class="text"></span>
+        </p>
+    </div>
+    <div class="box2">
+        <button class="btn-submit">提取1</button>
+        <button class="btn-submit">提取2</button>
+        <button class="btn-submit">提取3</button>
+        <p>遍历数组：
+            <span class="text"></span>
+        </p>
+    </div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+    $(function() {
+        $(".box .btn-submit").click(function() {
+            var $val = $(this).prev("input").val();
+            if ($val == "") {
+                alert("输入内容不能为空！");
+            } else {
+                $(".box .text").html($val);
+            }
+        });
+        $(".box1 .btn-submit").click(function() {
+            var $total = "";
+            var $one = $('.one').val();
+            var $two = $('.two').val();
+            if ($one == "" || $two == "") {
+                alert("输入内容不能为空！");
+            } else {
+                $total = $one + $two;
+                $(".box1 .text").html($total);
+            }
+        });
+        $(".box2 .btn-submit").click(function() {
+            var arr = ['第一句', '第二句', '第三句'];
+            var q = $(this).index();
+            $(".box2 .text").html(arr[q]);
+        });
+    })
+</script>
+
+</html>
+
+</html>

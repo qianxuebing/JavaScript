@@ -20,10 +20,10 @@
             <button class="btn btn-info">栏目四</button>
         </div>
         <div>
-            <p class="alert-info">栏目一的内容</p>
-            <p class="alert-info">栏目二的内容</p>
-            <p class="alert-info">栏目三的内容</p>
-            <p class="alert-info">栏目四的内容</p>
+            <div class="alert-info">栏目一的内容</div>
+            <div class="alert-info">栏目二的内容</div>
+            <div class="alert-info">栏目三的内容</div>
+            <div class="alert-info">栏目四的内容</div>
         </div>
     </div>
 </body>
@@ -33,7 +33,7 @@
         $(".box button").click(function() {
             var $index = $(this).index();
             $(this).addClass('active').siblings().removeClass('active');
-            $(".box p").eq($index).show().siblings().hide();
+            $(".box .alert-info").eq($index).show().siblings().hide();
         })
     })
 </script>

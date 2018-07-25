@@ -66,13 +66,31 @@ input {
     border-color: #bce8f1;
 }
 
-.box p {
+.box .alert-info {
     display: none;
-    height: 50px;
+    height: 100px;
     line-height: 50px;
-    text-indent: 2em;
+    text-indent: 1em;
 }
 
-.box p:first-child {
+.box .alert-info:first-child {
     display: block;
+}
+
+#word,
+.one,
+.two {
+    height: 30px;
+    border-radius: 4px;
+    border: 1px solid lightseagreen;
+    outline: 0;
+}
+
+.btn-submit {
+    height: 35px;
+    border: 1px solid lightseagreen;
+    background-color: lightblue;
+    color: #999;
+    border-radius: 4px;
+    padding: 0 20px;
 }
