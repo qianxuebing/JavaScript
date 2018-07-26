@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>operator</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="box">
+        <input type="text" class="one">
+        <span>加</span>
+        <input type="text" class="two">
+        <button class="btn-sum">求和</button>
+    </div>
+    <div class="box1">
+        <input type="text" class="one">
+        <span>减</span>
+        <input type="text" class="two">
+        <button class="btn-cha">求差</button>
+    </div>
+    <div class="box2">
+        <input type="text" class="one">
+        <span>乘</span>
+        <input type="text" class="two">
+        <button class="btn-ji">求积</button>
+    </div>
+    <div class="box3">
+        <input type="text" class="one">
+        <span>除</span>
+        <input type="text" class="two">
+        <button class="btn-shang">求商</button>
+    </div>
+    <div class="box4">
+        <input type="text" class="one">
+        <span>模</span>
+        <input type="text" class="two">
+        <button class="btn-mo">求模</button>
+    </div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+    $(function() {
+        $(".btn-sum").click(function() {
+            var $one = $(".box .one").val();
+            var $two = $(".box .two").val();
+            if ($one == "" || $two == "" || isNaN($one) || isNaN($two)) {
+                alert('输入错误，请重新输入！');
+            } else {
+                alert(parseInt($one) + parseInt($two));
+            }
+        });
+
+        $(".btn-cha").click(function() {
+            var $one = $(".box1 .one").val();
+            var $two = $(".box1 .two").val();
+            if ($one == "" || $two == "" || isNaN($one) || isNaN($two)) {
+                alert('输入错误，请重新输入！');
+            } else {
+                alert($one - $two);
+            }
+        });
+        $(".btn-ji").click(function() {
+            var $one = $(".box2 .one").val();
+            var $two = $(".box2 .two").val();
+            if ($one == "" || $two == "" || isNaN($one) || isNaN($two)) {
+                alert('输入错误，请重新输入！');
+            } else {
+                alert($one * $two);
+            }
+        });
+        $(".btn-shang").click(function() {
+            var $one = $(".box3 .one").val();
+            var $two = $(".box3 .two").val();
+            if ($one == "" || $two == "" || isNaN($one) || isNaN($two)) {
+                alert('输入错误，请重新输入！');
+            } else {
+                alert($one / $two);
+            }
+        });
+        $(".btn-mo").click(function() {
+            var $one = $(".box4 .one").val();
+            var $two = $(".box4 .two").val();
+            if ($one == "" || $two == "" || isNaN($one) || isNaN($two)) {
+                alert('输入错误，请重新输入！');
+            } else {
+                alert($one % $two);
+                $(".box4 .one").val("");
+                $(".box4 .two").val("");
+            }
+        })
+
+    })
+</script>
+
+</html>
+
+</html>

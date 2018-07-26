@@ -5,7 +5,8 @@
 .box,
 .box1,
 .box2,
-.box3 {
+.box3,
+.box4 {
     width: 80%;
     min-height: 50px;
     margin: 20px auto;
