@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Judgement Statement</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="box">
+        <p>switch判断：</p>
+        <input type="text" class="userName">
+        <select class="sex">
+            <option value="0">性别</option>
+            <option value="1">男</option>
+            <option value="2">女</option>
+        </select>
+        <button class="greet">问候</button>
+    </div>
+
+    <div class="box">
+        <p>三目运算符：</p>
+        <input type="text" class="check-double">
+        <button class="btn-check-double">判断单双数</button>
+    </div>
+
+    <div class="box">
+        <p>break,continue区别：</p>
+        <button class="btn-break">break</button>
+        <button class="btn-continue">continue</button>
+        <ul class="ul-list">
+            <li>break,continue</li>
+            <li>break,continue</li>
+            <li>break,continue</li>
+            <li>break,continue</li>
+        </ul>
+
+    </div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+    $(function() {
+
+        $(".greet").click(function() {
+            var $name = $('.userName').val();
+            var $select = $('.sex option:selected').text();
+            if (!isNaN($name)) {
+                alert('必须输入姓名且不能以数字开头！');
+            } else {
+                switch ($select) {
+                    case '男':
+                        alert($name + '，男士您好！');
+                        break;
+                    case '女':
+                        alert($name + '，女士您好！');
+                        break;
+                    default:
+                        alert($name + '，您好！');
+                }
+            }
+
+        });
+        $('.btn-check-double').click(function() {
+            var $input = $(".check-double").val();
+            if ($input == "" || isNaN($input)) {
+                alert('输入错误，请重新输入数字！');
+            } else {
+                $input % 2 == 0 ? alert('这是双数') : alert('这是单数');
+            }
+        });
+        // break不再循环
+        $('.btn-break').click(function() {
+            var i = 0;
+            while (i < $('.ul-list li').length) {
+                if (i == 1) {
+                    break;
+                }
+                $('.ul-list li').eq(i).css('backgroundColor', 'yellow');
+                i++;
+            }
+        });
+        // continue跳出当前循环,执行下一个循环
+        $('.btn-continue').click(function() {
+            for (let i = 0; i < $('.ul-list li').length; i++) {
+                if (i == 1) {
+                    continue;
+                }
+                $('.ul-list li').eq(i).css('backgroundColor', 'pink');
+            }
+        })
+
+
+
+    })
+</script>
+
+</html>
