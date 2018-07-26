@@ -42,6 +42,27 @@
         <input type="text" class="two">
         <button class="btn-mo">求模</button>
     </div>
+    <div class="box">
+        <button class="btn-change-color">执行变色</button>
+        <ul class="ul-list">
+            <li>隔行变色</li>
+            <li>隔行变色</li>
+            <li>隔行变色</li>
+            <li>隔行变色</li>
+        </ul>
+    </div>
+    <div class="box">
+        <p>求商取模用于秒转时间：</p>
+        <input type="text" class="transform-time">
+        <button class="btn-trans-time">秒转时间</button>
+    </div>
+
+    <div class="box">
+        <p>判断是否为两位数：</p>
+        <input type="text" class="number">
+        <button class="btn-number">判断</button>
+    </div>
+
 </body>
 <script src="js/jquery-1.10.2.min.js"></script>
 <script>
@@ -50,7 +71,7 @@
             var $one = $(".box .one").val();
             var $two = $(".box .two").val();
             if ($one == "" || $two == "" || isNaN($one) || isNaN($two)) {
-                alert('输入错误，请重新输入！');
+                alert('输入错误，请重新输入数字！');
             } else {
                 alert(parseInt($one) + parseInt($two));
             }
@@ -60,7 +81,7 @@
             var $one = $(".box1 .one").val();
             var $two = $(".box1 .two").val();
             if ($one == "" || $two == "" || isNaN($one) || isNaN($two)) {
-                alert('输入错误，请重新输入！');
+                alert('输入错误，请重新输入数字！');
             } else {
                 alert($one - $two);
             }
@@ -69,7 +90,7 @@
             var $one = $(".box2 .one").val();
             var $two = $(".box2 .two").val();
             if ($one == "" || $two == "" || isNaN($one) || isNaN($two)) {
-                alert('输入错误，请重新输入！');
+                alert('输入错误，请重新输入数字！');
             } else {
                 alert($one * $two);
             }
@@ -78,7 +99,7 @@
             var $one = $(".box3 .one").val();
             var $two = $(".box3 .two").val();
             if ($one == "" || $two == "" || isNaN($one) || isNaN($two)) {
-                alert('输入错误，请重新输入！');
+                alert('输入错误，请重新输入数字！');
             } else {
                 alert($one / $two);
             }
@@ -87,11 +108,45 @@
             var $one = $(".box4 .one").val();
             var $two = $(".box4 .two").val();
             if ($one == "" || $two == "" || isNaN($one) || isNaN($two)) {
-                alert('输入错误，请重新输入！');
+                alert('输入错误，请重新输入数字！');
             } else {
                 alert($one % $two);
                 $(".box4 .one").val("");
                 $(".box4 .two").val("");
+            }
+        });
+        $(".btn-change-color").click(function() {
+            for (let i = 0; i < $(".ul-list li").length; i++) {
+                if (i % 2 == 0) {
+                    // $(".ul-list li")[i].style.backgroundColor = "yellow";
+                    $(".ul-list li").eq(i).css("backgroundColor", 'yellow');
+                } else {
+                    // $(".ul-list li")[i].style.backgroundColor = "pink";
+                    $(".ul-list li").eq(i).css("backgroundColor", 'pink');
+                }
+
+            }
+        });
+
+        $(".btn-trans-time").click(function() {
+            var $time = $(this).prev().val();
+            if ($time == "" || isNaN($time)) {
+                alert('输入有误，请重新输入数字！');
+            } else {
+                alert(parseInt($time / 60) + '分钟' + ($time % 60) + '秒');
+            }
+        });
+
+        $(".btn-number").click(function() {
+            var $num = $(".number").val();
+            if ($num == "" || isNaN($num)) {
+                alert("输入有误，请重新输入数字！");
+            } else {
+                if ($num > 9 && $num < 100) {
+                    alert('是两位数！');
+                } else {
+                    alert('不是两位数');
+                }
             }
         })
 

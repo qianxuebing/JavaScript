@@ -13,6 +13,7 @@
     border: 1px solid #ddd;
     box-shadow: 0 0 3px rgba(0, 255, 0, 0.3);
     padding: 10px;
+    box-sizing: border-box;
 }
 
 button {
@@ -157,11 +158,30 @@ button {
 }
 
 p {
-    margin-top: 10px;
+    margin: 10px 0;
     color: #666;
 }
 
 .title {
     margin-top: 0;
     margin-bottom: 10px;
+}
+
+.ul-list {
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.ul-list li {
+    width: 100%;
+    padding: 10px 20px;
+    border-top: 1px solid #ccc;
+}
+
+.ul-list li:first-of-type {
+    border-top: 0;
 }
