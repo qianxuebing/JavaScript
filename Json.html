@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="box">
+        <p>用Json定义变量并提取：</p>
+        <code>var json = {a:5,b:15,c:25}</code>
+        <br>
+        <br>
+        <button class="btn-a">Json变量a</button>
+        <button class="btn-b">Json变量b</button>
+        <button class="btn-c">Json变量c</button>
+        <button class="btn-allJson">循环输出</button>
+    </div>
+
+    <div class="box">
+        <p>用数组定义并提取：</p>
+        <code>var arr = [5,15,25]</code>
+        <br>
+        <br>
+        <button class="btn-0">数组0</button>
+        <button class="btn-1">数组1</button>
+        <button class="btn-2">数组2</button>
+        <button class="btn-allArr">循环输出</button>
+    </div>
+    <div class="box">
+
+    </div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+    $(function() {
+        var json = {
+            a: 5,
+            b: 15,
+            c: 25
+        };
+        $(".btn-a").click(function() {
+            alert(json.a);
+        });
+        $(".btn-b").click(function() {
+            alert(json.b);
+        });
+        $(".btn-c").click(function() {
+            alert(json.c);
+        });
+        $('.btn-allJson').click(function() {
+            for (var i in json) {
+                alert('第' + i + "个数字是" + json[i]);
+            }
+        })
+
+
+        var arr = [5, 15, 25];
+        $(".btn-0").click(function() {
+            alert(arr[0]);
+        });
+        $(".btn-1").click(function() {
+            alert(arr[1]);
+        });
+        $(".btn-2").click(function() {
+            alert(arr[2]);
+        });
+        $('.btn-allArr').click(function() {
+            for (var i in arr) {
+                alert('第' + i + "个数字是" + arr[i]);
+            }
+        })
+    })
+</script>
+
+</html>
+
+</html>
