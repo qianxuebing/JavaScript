@@ -35,6 +35,92 @@
             <span class="text"></span>
         </p>
     </div>
+    <div class="box">
+        <p>数组添加删除，头部或尾部</p>
+        <code>var a=[1,2,3,4,5,6]</code>
+        <br>
+        <br>
+        <small>1.设置数组的长度：</small>
+        <br>
+        <br>
+        <button class="btn-default">默认length</button>
+        <button class="btn-three">只要前3个</button>
+        <br>
+        <br>
+        <small>2.数组尾部添加删除：</small>
+        <br>
+        <br>
+        <button class="btn-push">尾部添加push</button>
+        <button class="btn-pop">尾部删除pop</button>
+        <br>
+        <br>
+        <small>3.数组头部添加删除：</small>
+        <br>
+        <br>
+        <button class="btn-unshift">头部添加unshift</button>
+        <button class="btn-shift">头部删除shift</button>
+    </div>
+    <div class="box">
+        <p>数组添加删除，其他方式：</p>
+        <code>var a=[1,2,3,4,5,6]</code>
+        <br>
+        <br>
+        <small>1.删除：splice</small>
+        <br>
+        <br>
+        <button class="btn-splice">删除3-5位</button>
+        <br>
+        <br>
+        <small>2.添加：splice</small>
+        <br>
+        <br>
+        <button class="btn-splice2">在第2位添加abc</button>
+        <br>
+        <br>
+        <small>3.替换：splice</small>
+        <br>
+        <br>
+        <button class="btn-splice3">在第2位删除2位又插入2位</button>
+    </div>
+
+    <div class="box">
+        <p>数组链接，分割，排序：</p>
+
+        <small>1.数组链接：concat</small>
+        <br>
+        <br>
+        <code>var a=[1,2,3]; var b=[4,5,6];</code>
+        <br>
+        <br>
+        <button class="btn-concat">链接2个数组</button>
+        <br>
+        <br>
+        <small>2.数组分割：join</small>
+        <br>
+        <br>
+        <code>var a=[1,2,3.4,5];</code>
+        <br>
+        <br>
+        <button class="btn-join">用-链接</button>
+        <br>
+        <br>
+        <small>3.数组字符串排序：sort</small>
+        <br>
+        <br>
+        <code>var a=['float','height','window','zoom','load'] ;</code>
+        <br>
+        <br>
+        <button class="btn-string">字符串排序</button>
+        <br>
+        <br>
+        <small>3.数组排序：sort</small>
+        <br>
+        <br>
+        <code>var a=[33,22,15,53,355,134,2,5,6];</code>
+        <br>
+        <br>
+        <button class="btn-arr">数组排序</button>
+    </div>
 </body>
 <script src="js/jquery-1.10.2.min.js"></script>
 <script>
@@ -63,6 +149,74 @@
             var q = $(this).index();
             $(".box2 .text").html(arr[q]);
         });
+
+
+        $('.btn-default').click(function() {
+            var a = [1, 2, 3, 4, 5, 6];
+            alert(a);
+        });
+        $('.btn-three').click(function() {
+            var a = [1, 2, 3, 4, 5, 6];
+            a.length = 3;
+            alert(a);
+        });
+        $('.btn-push').click(function() {
+            var a = [1, 2, 3, 4, 5, 6];
+            a.push(7);
+            alert(a);
+        });
+        $('.btn-pop').click(function() {
+            var a = [1, 2, 3, 4, 5, 6];
+            a.pop();
+            alert(a);
+        });
+        $('.btn-unshift').click(function() {
+            var a = [1, 2, 3, 4, 5, 6];
+            a.unshift('a');
+            alert(a);
+        });
+        $('.btn-shift').click(function() {
+            var a = [1, 2, 3, 4, 5, 6];
+            a.shift();
+            alert(a);
+        });
+        $('.btn-splice').click(function() {
+            var a = [1, 2, 3, 4, 5, 6];
+            a.splice(2, 3);
+            alert(a);
+        });
+        $('.btn-splice2').click(function() {
+            var a = [1, 2, 3, 4, 5, 6];
+            a.splice(2, 0, 'a', 'b', 'c');
+            alert(a);
+        });
+        $('.btn-splice3').click(function() {
+            var a = [1, 2, 3, 4, 5, 6];
+            a.splice(2, 3, 'a', 'b', 'c');
+            alert(a);
+        });
+        $('.btn-concat').click(function() {
+            var a = [1, 2, 3];
+            b = [4, 5, 6];
+            var c = a.concat(b);
+            alert(c);
+        });
+        $('.btn-join').click(function() {
+            var a = [1, 2, 3, 4, 5];
+            alert(a.join('-'));
+        });
+        $('.btn-string').click(function() {
+            var a = ['float', 'height', 'window', 'zoom', 'load'];
+            alert(a.sort());
+        });
+        $('.btn-arr').click(function() {
+            var a = [33, 22, 15, 53, 355, 134, 2, 5, 6];
+            var b = a.sort(function(a, b) {
+                return a - b;
+            });
+            alert(b);
+        })
+
     })
 </script>
 
