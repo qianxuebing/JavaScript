@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>date-setInterval</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="box">
+        <p>定时器：</p>
+        <button class="btn-setInterval">每隔1秒弹出一次</button>
+        <button class="btn-setTimeout">2秒后弹出仅一次</button>
+    </div>
+    <div class="box">
+        <p>日期对象：</p>
+        <button class="btn-hour">当前小时</button>
+        <button class="btn-m">当前分钟</button>
+        <button class="btn-s">当前秒</button>
+        <button class="btn-time">当前时间</button>
+    </div>
+    <div class="box">
+        <h1 class="current-time"></h1>
+    </div>
+</body>
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+    $(function() {
+        setInterval(CurrentTime, 1000);
+        $('.btn-setInterval').click(function() {
+            var i = 0;
+            setInterval(function() {
+                alert('这是弹出框，第' + i + '次弹出');
+                return i += 1;
+            }, 1000);
+        });
+        $('.btn-setTimeout').click(function() {
+            setTimeout(function() {
+                alert('这是2秒后弹出的！');
+            }, 2000);
+        });
+
+        var now = new Date();
+        $('.btn-hour').click(function() {
+            alert('当前时间是：' + now.getHours() + '时');
+        });
+        $('.btn-m').click(function() {
+            alert('当前时间是：' + now.getMinutes() + '分钟');
+        });
+        $('.btn-s').click(function() {
+            alert('当前时间是：' + now.getSeconds() + '秒');
+        });
+        $('.btn-time').click(function() {
+            var a = now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds();
+            alert('当前时间是：' + a);
+        });
+
+
+    })
+
+    function CurrentTime() {
+        var now = new Date();
+        var h = now.getHours();
+        h = h >= 10 ? h : '0' + h;
+        var m = now.getMinutes();
+        m = m >= 10 ? m : '0' + m;
+        var s = now.getSeconds();
+        s = s >= 10 ? s : '0' + s;
+        $('.current-time').html(h + ':' + m + ':' + s);
+    }
+</script>
+
+</html>
+
+</html>

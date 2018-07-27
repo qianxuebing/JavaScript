@@ -191,3 +191,10 @@ p {
 .ul-list li:first-of-type {
     border-top: 0;
 }
+
+.current-time {
+    text-align: center;
+    color: green;
+    font-size: 25px;
+    font-weight: 700;
+}
